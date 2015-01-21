@@ -23,9 +23,6 @@ if (! opts.owner || ! opts.repo) {
 console.log('Grabbing ' + opts.owner + '/' + opts.repo + '...');
 utils.clone(opts)
 	.then(function(output) {
-		if (output.stderr && output.stderr.length) {
-			console.error(output.stderr.toString());
-		}
 		process.exit(0);
 	})
 	.catch(function(err) {
