@@ -24,7 +24,7 @@ console.log('Grabbing ' + opts.owner + '/' + opts.repo + '...');
 utils.clone(opts)
 	.then(function(output) {
 		if (output.stderr && output.stderr.length) {
-			console.error(stderr.toString());
+			console.error(output.stderr.toString());
 		}
 		process.exit(0);
 	})
