@@ -1,0 +1,38 @@
+#!/usr/bin/env node
+
+var utils     = require('../src');
+var minimist  = require('minimist');
+
+var argv = minimist(process.argv.slice(4), {
+	boolean: ['https', 'ssh']
+});
+
+var opts = {
+	owner: process.argv[2],
+	repo: process.argv[3],
+	method: argv.https ? 'https' : 'ssh',
+	target: argv.target || process.argv[3],
+	branch: argv.branch || 'master'
+};
+
+if (! opts.owner || ! opts.repo) {
+	console.log('usage: grab <owner> <repo> [--branch=<branch>] [--https|--ssh] [--target=target]');
+	process.exit(1);
+}
+
+console.log('Grabbing ' + opts.owner + '/' + opts.repo + '...');
+utils.clone(opts)
+	.then(function(output) {
+		if (output.stderr && output.stderr.length) {
+			console.error(stderr.toString());
+		}
+		process.exit(0);
+	})
+	.catch(function(err) {
+		if (! err) {
+			console.error('Unknown error');
+			process.exit(1);
+		}
+		console.error(err.stack || err.message || err);
+		process.exit(1);
+	});

@@ -1,0 +1,31 @@
+{
+  "name": "node-grab",
+  "version": "1.0.0",
+  "description": "A tiny utility for grabbing the tip of GitHub repos",
+  "main": "bin/grab",
+  "bin": {
+    "grab": "bin/grab"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/UmbraEngineering/node-grab"
+  },
+  "keywords": [
+    "github",
+    "git",
+    "clone"
+  ],
+  "author": "James Brumond <james@jbrumond.me> (http://www.jbrumond.me)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UmbraEngineering/node-grab/issues"
+  },
+  "homepage": "https://github.com/UmbraEngineering/node-grab",
+  "dependencies": {
+    "minimist": "^1.1.0",
+    "promise-es6": "^0.1.0"
+  }
+}
