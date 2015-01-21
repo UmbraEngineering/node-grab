@@ -1,6 +1,6 @@
 {
   "name": "node-grab",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A tiny utility for grabbing the tip of GitHub repos",
   "main": "bin/grab",
   "bin": {
